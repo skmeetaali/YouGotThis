@@ -23,10 +23,10 @@
 <body class="bs-body-color">
     <div class="header">
         <a href="">Menu</a>
-        <a href="{{url_for('add')}}">Add Tasks</a>
+        <a href="{{url_for('todo.add')}}">Add Tasks</a>
         <a href="">Logout</a>
-        <a href="{{url_for('show')}}">Show Tasks</a>
-        <a href="{{url_for('welcome')}}">Home</a>
+        <a href="{{url_for('todo.show')}}">Show Tasks</a>
+        <a href="{{url_for('todo.welcome')}}">Home</a>
     </div>
     {% block content %}{% endblock %}
 </body>

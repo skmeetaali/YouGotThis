@@ -2,7 +2,8 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import timedelta
 from flask_migrate import Migrate
 from flask import Flask
-from todo import app
+from todo.routes import todo
+from extebsion import db
 
 
 # setting up flask app
@@ -14,11 +15,12 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
 # setting up database
-db = SQLAlchemy(app)
+db.init_app(app)
+migrate = Migrate(app, db)
+app.register_blueprint(todo)
 
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
     app.run(debug=True)
 
-migrate = Migrate(app, db)

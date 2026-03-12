@@ -24,7 +24,7 @@
         <tbody class="table-danger">
             <td>{{data.task}}</td>
             <td>{{data.date}}
-                <form action="{{url_for('changeDate', id = data.id)}}" method="post">
+                <form action="{{url_for('todo.changeDate', id = data.id)}}" method="post">
                     <input class="form-control" type="date" id="ipdate{{data.id}}" name="ndate" style="display: none;">
                     <button type="button" class="btn" onclick="editDate('{{data.id}}')"><i class="fa fa-trash"></i></button>
                     <button class="btn btn-primary" type="submit" style="display: none;" id="save{{data.id}}">Save</button>
@@ -32,7 +32,7 @@
             </td>
             <td>Passed due date</td>
             <td>
-                <a style="color: rgb(227, 125, 125);" href="{{url_for('delete', id=data.id)}}"
+                <a style="color: rgb(227, 125, 125);" href="{{url_for('todo.delete', id=data.id)}}"
                     onclick="return confirm('Are you sure??')">Delete Task</a>
             </td>
         </tbody>
@@ -41,7 +41,7 @@
         <tbody class="table-light">
             <td>{{data.task}}</td>
             <td>{{data.date}}
-                <form action="{{url_for('changeDate', id = data.id)}}" method="post">
+                <form action="{{url_for('todo.changeDate', id = data.id)}}" method="post">
                     <input class="form-control" type="date" id="ipdate{{data.id}}" name="ndate" style="display: none;">
                     <button type="button" class="btn" onclick="editDate('{{data.id}}')"><i class="fa fa-trash"></i></button>
                     <button class="btn btn-primary" type="submit" style="display: none;" id="save{{data.id}}">Save</button>
@@ -49,7 +49,7 @@
             </td>
             <td>Not passed due date yet</td>
             <td>
-                <a style="color: rgb(227, 125, 125);" href="{{url_for('delete', id=data.id)}}"
+                <a style="color: rgb(227, 125, 125);" href="{{url_for('todo.delete', id=data.id)}}"
                     onclick="return confirm('Are you sure??')">Delete Task</a>
             </td>
         </tbody>
