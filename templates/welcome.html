@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="body" style="padding: 20px; border: 2px solid black; width: 80%; text-align: center; margin:20px  auto;">
+    <h1
+        style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 50px; ">
+        Welcome to the App</h1>
+        <br><br>
+    <form action="{{url_for('main')}}" method="get">
+        <button class="btn btn-primary">Add Tasks ?</button>
+    </form>
+    <br><br>
+    <form action="{{url_for('show')}}">
+        <button class="btn btn-primary">Show Tasks</button>
+    </form>
+</div>
+{% endblock %}
