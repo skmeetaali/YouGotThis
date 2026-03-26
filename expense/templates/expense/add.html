@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+<div class="body">
+    <div class="box">
+        <fieldset>
+            <form action="{{url_for('expense.add')}}">
+                <label for="date" class="form-label">Date</label>
+                <input type="date" name="date">
+                <label for="amount" class="form-label">Amount</label>
+                <input type="number" name="amount">
+                <label for="item" class="form-label">Spent on</label>
+                <input type="text" name="item">
+        </fieldset>
+        </form>
+    </div>
+</div>
+{% endblock %}

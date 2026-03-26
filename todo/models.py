@@ -1,4 +1,4 @@
-from extebsion import db
+from extension import db
 
 class task(db.Model):
     id = db.Column("id", db.Integer, primary_key = True)

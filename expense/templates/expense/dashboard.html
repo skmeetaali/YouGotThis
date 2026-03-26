@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+<div class="show">
+    <table class="table table_hover">
+        <th>Spent on</th>
+        <th>Amount</th>
+        {% for expense in expense %}
+            <tr>{{expense.item}}</tr>
+            <tr>{{expense.amount}}</tr>
+            <tr>{{expense.date}}</tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
+

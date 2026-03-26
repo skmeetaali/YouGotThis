@@ -1,4 +1,4 @@
-from extebsion import db
+from extension import db
 from .models import task
 from datetime import datetime, date
 from flask import url_for, request
@@ -8,11 +8,11 @@ todo = Blueprint("todo", __name__, template_folder='templates')
 
 @todo.route("/")
 def home():
-    return render_template("todo/welcome.html")
+    return render_template("welcome.html")
 
 @todo.route("/welcome")
 def welcome():
-    return render_template("todo/welcome.html")
+    return render_template("welcome.html")
 
 @todo.route('/main', methods=['GET'])
 def main():
@@ -71,8 +71,8 @@ def changeDate(id):
             t.date = date
             db.session.commit()
         else:
-            return redirect(url_for("todo.welcome"))
+            return redirect(url_for("welcome"))
     else:
-        return redirect(url_for("todo.welcome"))
+        return redirect(url_for("welcome"))
     return redirect(url_for('todo.show', t = t))            
     

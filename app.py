@@ -3,7 +3,8 @@ from datetime import timedelta
 from flask_migrate import Migrate
 from flask import Flask
 from todo.routes import todo
-from extebsion import db
+from extension import db
+from expense.routes import expense
 
 
 # setting up flask app
@@ -18,6 +19,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 migrate = Migrate(app, db)
 app.register_blueprint(todo)
+app.register_blueprint(expense)
+
 
 if __name__ == '__main__':
     with app.app_context():
