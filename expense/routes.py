@@ -46,9 +46,11 @@ def dashboard():
         grouped_exp[exp.date].append(exp)
     return render_template("expense/dashboard.html", grp = grouped_exp)
 
+
 @exp.route('/deleteall', methods = ['GET'])
 def deleteall():
-    for exp in expense:
+    expenses = expense.query.all()
+    for exp in expenses:
         db.session.delete(exp)
         db.session.commit()
     return redirect(url_for('exp.dashboard'))
