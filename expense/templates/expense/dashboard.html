@@ -1,14 +1,27 @@
 {% extends "base.html" %}
+{% block content %}
+
 <div class="show">
     <table class="table table_hover">
-        <th>Spent on</th>
-        <th>Amount</th>
-        {% for expense in expense %}
-            <tr>{{expense.item}}</tr>
-            <tr>{{expense.amount}}</tr>
-            <tr>{{expense.date}}</tr>
-        {% endfor %}
+        <thead>
+            <th>Date</th>
+            <th>Item</th>
+        </thead>
+        <tbody style="overflow-y: scroll;">
+            {% for date , exp in grp.items() %}
+            <tr style="background-color: antiquewhite;">
+                <td>{{ date }}</td>
+                <td>
+                    {% for item in exp %}
+                    {{ item.item }} - Rs{{item.amount}} <br><br>
+                    {% endfor %} <br>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
+    <form action="{{url_for('exp.deleteall')}}" method="get">
+        <button class="btn btn-danger">Delete All</button>
+    </form>
 </div>
 {% endblock %}
-

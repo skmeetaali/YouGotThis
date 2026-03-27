@@ -76,6 +76,7 @@ h3 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border: 2px solid black;
     font-weight: 800;
+    overflow-y: scroll;
 }
 
 .show h3{
