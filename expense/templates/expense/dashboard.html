@@ -16,6 +16,19 @@
                     {{ item.item }} - Rs{{item.amount}} <br><br>
                     {% endfor %} <br>
                 </td>
+            </tr> <br>
+
+            {% endfor %}
+
+            {% for total in totals %}
+            <tr>
+                <td>
+                    date: {{total.date}}
+                </td>
+                <td>
+                    total: {{total.total}}
+
+                </td>
             </tr>
             {% endfor %}
         </tbody>

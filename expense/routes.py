@@ -41,10 +41,13 @@ def addexp():
 @exp.route("/dashboard", methods = ["GET"])
 def dashboard():
     expenses = expense.query.order_by(expense.date.desc()).all()
+    totals = db.session.query(expense.date, func.sum(expense.amount).label('total')).group_by(expense.date)
+    for total in totals:
+        print(total.date)
     grouped_exp = defaultdict(list)
     for exp in expenses:
         grouped_exp[exp.date].append(exp)
-    return render_template("expense/dashboard.html", grp = grouped_exp)
+    return render_template("expense/dashboard.html", grp = grouped_exp, totals = totals)
 
 
 @exp.route('/deleteall', methods = ['GET'])
