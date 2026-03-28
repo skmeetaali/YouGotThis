@@ -79,10 +79,11 @@ h3 {
     overflow-y: scroll;
 }
 
-.show h3{
+.show h3 {
     color: rgb(0, 0, 0);
     font-size: 30px;
 }
+
 a {
     text-decoration: none;
     color: rgb(0, 0, 0);
@@ -111,3 +112,19 @@ label {
 form {
     color: white;
 }
+
+.menu_div {
+    display: none;
+}
+
+.header:hover + .menu_div {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin-left: 0 ;
+    padding-left: 0;
+    background-color: rgb(158, 158, 210);
+    width: 200px;
+    text-align: left;
+    height:100vh;}
+
